@@ -1,4 +1,5 @@
 import iconStar from "./assets/icon-star.svg"
+import ilustrationThankYou from "./assets/illustration-thank-you.svg"
 import { useState } from "react"
 
 export function App() {
@@ -8,6 +9,7 @@ export function App() {
   function handleSubmit() {
     if (rateNote !== 0) {
     setSubmited(true)
+    return
   }
   
   alert("Please, choose a rate button!")
@@ -18,9 +20,8 @@ export function App() {
   }
 
   return (
-    <div className="h-svh bg-very-dark-blue text-white flex justify-center 
-    items-center px-6">
-      {submited === false ? (
+    
+      submited === false ? (
         
       <div className="bg-radial-gradient max-w-103 px-6 pt-6 pb-8 rounded-2xl 
       font-overpass">
@@ -35,19 +36,19 @@ export function App() {
 
         <div className="flex justify-between mb-6">
           <input type="button" value={1} className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-sm text-medium-grey font-bold focus:text-white O"onClick={() =>
+          rounded-full text-sm text-medium-grey font-bold focus:bg-medium-grey focus:text-white "onClick={() =>
             handleChangeRateNote(1)} />
           <input type="button" value={2} className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-sm text-medium-grey font-bold focus:text-white O"onClick={() =>
+          rounded-full text-sm text-medium-grey font-bold focus:bg-medium-grey focus:text-white"onClick={() =>
             handleChangeRateNote(2)} />
           <input type="button" value={3} className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-sm text-medium-grey font-bold focus:text-white O"onClick={() =>
+          rounded-full text-sm text-medium-grey font-bold focus:bg-medium-grey focus:text-white"onClick={() =>
             handleChangeRateNote(3)} />
           <input type="button" value={4} className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-sm text-medium-grey font-bold focus:text-white O"onClick={() =>
+          rounded-full text-sm text-medium-grey font-bold focus:bg-medium-grey focus:text-white"onClick={() =>
             handleChangeRateNote(4)} />
           <input type="button" value={5} className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-sm text-medium-grey font-bold focus:text-white O"onClick={() =>
+          rounded-full text-sm text-medium-grey font-bold focus:bg-medium-grey focus:text-white"onClick={() =>
             handleChangeRateNote(5)} />
         </div>
 
@@ -55,8 +56,12 @@ export function App() {
         tracking-1" onClick={handleSubmit}>Submit</button>
       </div>
       ):(
-<p>Outro Código</p>
-      )}
-    </div>
+<div className="bg-radial-gradient max-w-103 px-6 pt-6 pb-8 rounded-2xl 
+      font-overpass">
+        <img src={ilustrationThankYou} alt="Ilustration Thank You" />
+        <p></p>
+      </div>
+      )
+    
   )
 }
